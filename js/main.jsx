@@ -1,12 +1,24 @@
 import Hello from './hello.jsx';
 import World from './world.jsx';
+import Item from './item.jsx';
 
 import React from 'react';
 import ReactDom from 'react-dom';
 
 class App extends React.Component {
   render() {
-    return <h1><Hello/>, <World/>! - tis a little quicker now</h1>
+    const items = [
+      {
+        id:"1"
+      },{
+        id:"2"
+      }
+    ].map((current) => {
+      return <Item item={current} key={current.id}/>
+    });
+    return <h1><Hello/>, <World/>!
+      <div>{items}</div>
+    </h1>;
   }
 }
 
