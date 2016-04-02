@@ -9,12 +9,8 @@ import itemSchema from '../data/products-schema.json';
 
 class App extends React.Component {
   render() {
-    const items = itemData.map((current) => {
-      return <Item data={current} schema={itemSchema} key={current.id}/>
-    })[0];
-    return <h1><Hello/>, <World/>!
-      <div>{items}</div>
-    </h1>;
+    const item = <Item data={itemData} schema={itemSchema} />;
+    return <div>{item}</div>;
   }
 }
 
