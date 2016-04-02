@@ -6,7 +6,7 @@ import ReactDom from 'react-dom';
 
 class App extends React.Component {
   render() {
-    return <h1><Hello/>, <World/>!</h1>
+    return <h1><Hello/>, <World/>! - tis a little quicker now</h1>
   }
 }
 

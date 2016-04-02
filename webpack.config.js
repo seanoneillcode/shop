@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './main.jsx',
+  entry: './js/main.jsx',
   devtool: 'eval-source-map',
   output: {
     path: __dirname,
