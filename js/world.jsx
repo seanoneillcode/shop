@@ -1,7 +1,8 @@
-import React from 'react';
-// import ReactDom from 'react-dom';
+'use strict'
 
-export default class World extends React.Component {
+import React from 'react';
+
+class World extends React.Component {
   render() {
     return <span>World</span>
   }
