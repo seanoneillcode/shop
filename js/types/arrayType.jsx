@@ -2,6 +2,7 @@
 
 import React from 'react';
 import StringType from './stringType.jsx';
+import NumberType from './numberType.jsx';
 import ObjectType from './objectType.jsx';
 
 class ArrayType extends React.Component {
@@ -20,7 +21,14 @@ class ArrayType extends React.Component {
       return <ObjectType schema={schema} property={property} value={value}/>
     }
     if (type === "string" || type === "number") {
-      return <StringType schema={schema} property={property} value={value}/>;
+      return <StringType schema={schema} property={property} value={value} onChange={(item) => {
+          const value = [];
+          value[item.property] = item.value;
+          this.props.onChange({property: this.props.property, value: value});
+        }}/>;
+    }
+    if (type === "number") {
+      return <NumberType schema={schema} property={property} value={value}/>
     }
     return;
   }

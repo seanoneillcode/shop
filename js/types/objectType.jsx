@@ -2,18 +2,19 @@
 
 import React from 'react';
 import StringType from './stringType.jsx';
+import NumberType from './numberType.jsx';
 import ArrayType from './arrayType.jsx';
 
 class ObjectType extends React.Component {
 
-  handleChange(event) {
-    this.props.onChange(this.props.property, event.target.value);
-  }
-
   decide(schema, property, value) {
     const type = schema["type"];
     if (type === "array") {
-      return <ArrayType schema={schema} property={property} value={value}/>
+      return <ArrayType schema={schema} property={property} value={value} onChange={(item) => {
+        const value = {}
+        value[item.property] = item.value;
+        this.props.onChange({property: this.props.property, value: value});
+        }}/>;
     }
     if (type === "object") {
       return <ObjectType schema={schema} property={property} value={value} onChange={(item) => {
@@ -30,7 +31,11 @@ class ObjectType extends React.Component {
         }}/>;
     }
     if (type === "number") {
-      return <StringType schema={schema} property={property} value={value}/>;
+      return <NumberType schema={schema} property={property} value={value} onChange={(item) => {
+          const value = {}
+          value[item.property] = item.value;
+          this.props.onChange({property: this.props.property, value: value});
+        }}/>;
     }
     return;
   }
