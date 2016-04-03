@@ -36,7 +36,7 @@ class ArrayType extends React.Component {
     if (list) {
       let counter = 0;
       for (let item of list) {
-        items.push(<div style={{marginLeft: "40px"}} key={counter}>{this.decide(schema, "item", list)}</div>);
+        items.push(<div style={{marginLeft: "40px"}} key={counter}>{this.decide(schema, counter, item)}</div>);
         counter++;
       }
     }
