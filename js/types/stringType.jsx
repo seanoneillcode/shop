@@ -4,24 +4,15 @@ import React from 'react';
 
 class StringType extends React.Component {
 
-  constructor(props) {
-    super(props);
-    console.log("cons ", this);
-    this.state = {
-      value: props.value
-    }
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange() {
-    this.setState({value: event.target.value});
+  handleChange(event) {
+    this.props.onChange({property : this.props.property, value: event.target.value});
   }
 
   render() {
-    console.log("handleString, ", this.props);
+    const stringValue = typeof this.props.value == "string" ? this.props.value : this.props.value[this.props.property];
     return <span>
       <lable>{this.props.property}</lable>
-      <input value={this.state.value} onChange={this.handleChange}/>
+      <input value={stringValue} onChange={this.handleChange.bind(this)}/>
       </span>;
   }
 }
