@@ -18,15 +18,17 @@ class Item extends React.Component {
   }
 
   render() {
-    const schema = this.props.schema;
-    const rootObject = {root: this.state.data};
-    const renderableSchema = <ObjectType schema={schema} property="root" value={this.state.data} onChange={
+    const schemaType = <ObjectType
+      schema = {this.props.schema}
+      property = "root"
+      value = {this.state.data}
+      onChange = {
         (item) => {
           const merged = _.merge({}, this.state.data, {root:item.value});
           this.setState({data:merged});
         }
       }/>;
-    return <div>schema:{renderableSchema}</div>
+    return <div>{schemaType}</div>
   }
 }
 

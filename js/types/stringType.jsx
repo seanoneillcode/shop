@@ -13,7 +13,7 @@ class StringType extends React.Component {
     return <span>
       <lable>{this.props.property}</lable>
       <input value={stringValue} onChange={this.handleChange.bind(this)}/>
-      </span>;
+    </span>;
   }
 }
 
