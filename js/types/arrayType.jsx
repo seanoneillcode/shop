@@ -19,10 +19,7 @@ class ArrayType extends React.Component {
     if (type === "object") {
       return <ObjectType schema={schema} property={property} value={value}/>
     }
-    if (type === "string") {
-      return <StringType schema={schema} property={property} value={value}/>;
-    }
-    if (type === "number") {
+    if (type === "string" || type === "number") {
       return <StringType schema={schema} property={property} value={value}/>;
     }
     return;

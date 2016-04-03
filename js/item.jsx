@@ -17,6 +17,10 @@ class Item extends React.Component {
     };
   }
 
+  getData() {
+    return this.state.data;
+  }
+
   render() {
     const schemaType = <ObjectType
       schema = {this.props.schema}

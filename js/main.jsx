@@ -9,17 +9,18 @@ import itemSchema from '../data/products-schema.json';
 class App extends React.Component {
 
   printState(item) {
-    console.log("STATE ", item.state);
+    console.log("data ", this.refs.itemForm.getData());
   }
 
   render() {
-    const item = <Item data={itemData} schema={itemSchema} />;
+    const item = <Item ref="itemForm" data={itemData} schema={itemSchema} />;
     return <div>{item}
       <div>
-        <button type="button" onClick={() => {
-            console.log("click ", this, item);
-            this.printState(item);
-          }}>Save</button>
+        <button type="button" onClick={
+          () => {
+            this.printState(item.type);
+          }
+        }>Save</button>
       </div>
     </div>;
   }
