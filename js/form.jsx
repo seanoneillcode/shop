@@ -6,7 +6,7 @@ import StringType from './types/stringType.jsx';
 import ObjectType from './types/objectType.jsx';
 import ArrayType from './types/arrayType.jsx';
 
-class Item extends React.Component {
+class Form extends React.Component {
 
   constructor(props) {
     super(props);
@@ -36,4 +36,4 @@ class Item extends React.Component {
   }
 }
 
-export default Item;
+export default Form;

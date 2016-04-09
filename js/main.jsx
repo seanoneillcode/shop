@@ -1,6 +1,6 @@
 'use strict'
 
-import Item from './item.jsx';
+import Form from './form.jsx';
 import React from 'react';
 import ReactDom from 'react-dom';
 import itemData from '../data/products-data.json';
@@ -8,17 +8,17 @@ import itemSchema from '../data/products-schema.json';
 
 class App extends React.Component {
 
-  printState(item) {
-    console.log("data ", this.refs.itemForm.getData());
+  printState() {
+    console.log("data ", this.refs.jsonForm.getData());
   }
 
   render() {
-    const item = <Item ref="itemForm" data={itemData} schema={itemSchema} />;
-    return <div>{item}
+    const form = <Form ref="jsonForm" data={itemData} schema={itemSchema} />;
+    return <div>{form}
       <div>
         <button type="button" onClick={
           () => {
-            this.printState(item.type);
+            this.printState();
           }
         }>Save</button>
       </div>
